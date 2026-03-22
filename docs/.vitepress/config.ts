@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/phorgegb/',
   lang: 'en-US',
   title: 'Global Business Systems Docs',
   description: 'Project documentation and GitHub submission guide',
