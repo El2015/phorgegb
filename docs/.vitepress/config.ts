@@ -5,14 +5,30 @@ export default defineConfig({
   lang: 'en-US',
   title: 'Global Business Systems Docs',
   description: 'Project documentation and GitHub submission guide',
+  lastUpdated: true,
   cleanUrls: true,
+  head: [
+  ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-XXXX' }],
+  ['script', {"docs:check": "vitepress build docs"}, `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXX');
+  `]
+  ],
   themeConfig: {
+    editLink: {
+    pattern: 'https://github.com/yourname/my-docs-project/edit/main/docs/:path',
+    text: 'Edit this page on GitHub'
+    },
     logo: '/logo.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },
       { text: 'API', link: '/api/' },
-      { text: 'GitHub Submission', link: '/guide/github-submission' }
+      { text: 'GitHub Submission', link: '/guide/github-submission' },
+      { text: 'Docs', link: '/current/guide/' },
+      { text: 'API', link: '/current/api/' }
     ],
     sidebar: {
       '/guide/': [
