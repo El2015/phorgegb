@@ -1,0 +1,14 @@
+# VitePress cache
+docs/.vitepress/cache/
+
+# Node
+node_modules/
+
+# Build output
+docs/.vitepress/dist/
+
+# Logs
+*.log
+
+# OS
+.DS_Store

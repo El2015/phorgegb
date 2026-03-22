@@ -27,8 +27,7 @@ export default defineConfig({
       { text: 'Guide', link: '/guide/' },
       { text: 'API', link: '/api/' },
       { text: 'GitHub Submission', link: '/guide/github-submission' },
-      { text: 'Docs', link: '/current/guide/' },
-      { text: 'API', link: '/current/api/' }
+      { text: 'Architecture', link: '/architecture/' }
     ],
     sidebar: {
       '/guide/': [
@@ -39,9 +38,18 @@ export default defineConfig({
             { text: 'Getting Started', link: '/guide/getting-started' },
             { text: 'GitHub Submission', link: '/guide/github-submission' }
           ]
+        },
+      {
+     text: 'Architecture',
+          items: [
+            { text: 'Overview', link: '/architecture/' },
+            { text: 'Auth Flow', link: '/architecture/auth-flow' },
+            { text: 'File Sync', link: '/architecture/file-sync' },
+            { text: 'System Overview', link: '/architecture/system-overview' }
+          ]
         }
       ],
-      '/api/': [
+    'api/': [
         {
           text: 'API',
           items: [
@@ -56,5 +64,21 @@ export default defineConfig({
     search: {
       provider: 'local'
     }
+  },
+markdown: {
+  config(md) {
+    const defaultFence =
+      md.renderer.rules.fence ||
+      ((tokens, idx, options, env, self) =>
+        self.renderToken(tokens, idx, options))
+
+    md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+      const token = tokens[idx]
+      if (token.info.trim() === 'mermaid') {
+        return `<pre class="mermaid">${token.content}</pre>`
+      }
+      return defaultFence(tokens, idx, options, env, self)
+    }
   }
+}
 })

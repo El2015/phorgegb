@@ -1,47 +1,26 @@
-<Note>
-This is an important note.
-</Note>
+# Architecture
 
-```mermaid
-graph TD
-  A[User] --> B[Frontend]
-  B --> C[API]
-  C --> D[Database]
+This section documents the high-level system architecture, authentication model, and supporting diagrams for the Global Business Systems project.
 
-### Preview checkpoint
+## Pages
 
-- diagrams render
-- layout is readable
+- [System Overview](./system-overview)
+- [Authentication Flow](./auth-flow)
+- [File Sync](./file-sync)
 
----
+# Guide
 
-## 5. Add Code Example Blocks with Tabs
+- [Diagram Support](./diagram-support)
 
-Create reusable pattern:
+## Assets
+
+Architecture diagrams are stored in the public directory and referenced by absolute paths.
+
+Example:
 
 ```md
-::: code-group
+![System Overview](/diagrams/export/system-overview.svg)
 
-```bash
-npm run docs:dev
+## Notes
 
-
-{
-  "scripts": {}
-}
-
-This improves developer readability.
-
----
-
-## 6. Add Search Optimization
-
-Enhance search relevance:
-
-```ts
-search: {
-  provider: 'local',
-  options: {
-    detailedView: true
-  }
-}
+Architecture diagrams are stored under `docs/public/diagrams/export/` and referenced with absolute paths such as `/diagrams/export/system-overview.svg`.
