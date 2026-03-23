@@ -3,7 +3,9 @@
 This project uses both Mermaid and draw.io.
 
 ## Mermaid
+
 Use Mermaid for:
+
 - auth flows
 - webhook flows
 - sequence diagrams
@@ -16,34 +18,34 @@ graph TD
   A[User] --> B[Frontend]
   B --> C[API]
   C --> D[Database]
+```
 
-  ### Preview checkpoint
+### Preview checkpoint
 
 - diagrams render
 - layout is readable
 
----
+## Add Code Example Blocks with Tabs
 
-## 5. Add Code Example Blocks with Tabs
-
-Create reusable pattern:
+Create a reusable pattern like this:
 
 ```md
 ::: code-group
 
 ```bash
 npm run docs:dev
+```
 
+```json
 {
   "scripts": {}
 }
+```
 
 
 This improves developer readability.
 
----
-
-## 6. Add Search Optimization
+## Add Search Optimization
 
 Enhance search relevance:
 
@@ -54,9 +56,12 @@ search: {
     detailedView: true
   }
 }
+```
 
 ## draw.io
+
 Use draw.io for:
+
 - polished business diagrams
 - stakeholder architecture
 - visual system maps
